@@ -74,3 +74,9 @@
   width: 50%;
   left: 0%;
 }
+
+@media only screen and (max-width: 700px) {
+  .stepper-component .stepper-header {
+    width: 280px;
+  }
+}
