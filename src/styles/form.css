@@ -21,4 +21,5 @@ input[type="submit"],
 button {
   background-color: var(--color-primary);
   color: var(--color-text-white);
+  height: 42px;
 }
