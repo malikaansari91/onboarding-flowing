@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import App from "../../App";
 import Onboarding from "../Onboarding";
 function AppRoutes() {
   return (

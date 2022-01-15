@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Input, Text } from "../../../shared";
+import { Heading, Text } from "../../../shared";
 import { useForm } from "react-hook-form";
 
 const OnboardingSectionFour = ({ goToNext }) => {

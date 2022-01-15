@@ -6,7 +6,6 @@ const OnboardingSectionThree = ({ goToNext }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = () => {

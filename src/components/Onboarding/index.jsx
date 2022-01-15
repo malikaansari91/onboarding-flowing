@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import logo from "../../assets/logo.svg";
 import { useStepper } from "../../context";
 import { Heading, Stepper } from "../../shared";
