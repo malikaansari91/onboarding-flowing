@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../../assets/logo.svg";
 import { useStepper } from "../../context";
 import { Heading, Stepper } from "../../shared";
@@ -7,7 +8,15 @@ import OnboardingSectionThree from "./components/OnboardingSectionThree";
 import OnboardingSectionTwo from "./components/OnboardingSectionTwo";
 
 function Onboarding() {
+  const [formData, setFormData] = useState({});
   const { incrementCurrentStep } = useStepper();
+  const updateFormData = (data) => {
+    setFormData({
+      ...formData,
+      ...data,
+    });
+  };
+  console.log(formData);
   return (
     <div className="onboarding-container mt-60">
       <div className="container">
@@ -30,16 +39,25 @@ function Onboarding() {
           <Stepper className="flex-items-center">
             <Stepper.Steps>
               <Stepper.Step id="first">
-                <OnboardingSectionOne goToNext={incrementCurrentStep} />
+                <OnboardingSectionOne
+                  setFormData={updateFormData}
+                  goToNext={incrementCurrentStep}
+                />
               </Stepper.Step>
               <Stepper.Step id="second">
-                <OnboardingSectionTwo goToNext={incrementCurrentStep} />
+                <OnboardingSectionTwo
+                  setFormData={updateFormData}
+                  goToNext={incrementCurrentStep}
+                />
               </Stepper.Step>
               <Stepper.Step id="third">
-                <OnboardingSectionThree goToNext={incrementCurrentStep} />
+                <OnboardingSectionThree
+                  setFormData={updateFormData}
+                  goToNext={incrementCurrentStep}
+                />
               </Stepper.Step>
               <Stepper.Step id="forth">
-                <OnboardingSectionFour />
+                <OnboardingSectionFour formData={formData} />
               </Stepper.Step>
             </Stepper.Steps>
           </Stepper>

@@ -2,15 +2,16 @@ import React from "react";
 import { Heading, Input, Text } from "../../../shared";
 import { useForm } from "react-hook-form";
 
-const OnboardingSectionTwo = ({ goToNext }) => {
+const OnboardingSectionTwo = ({ goToNext, setFormData }) => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     goToNext();
+    setFormData(data);
   };
 
   return (

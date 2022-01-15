@@ -2,17 +2,16 @@ import React from "react";
 import { Heading, Input, Text } from "../../../shared";
 import { useForm } from "react-hook-form";
 
-const OnboardingSectionOne = ({ goToNext }) => {
+const OnboardingSectionOne = ({ goToNext, setFormData }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     goToNext();
+    setFormData(data);
   };
-
-  console.log("error", errors); // watch input value by passing the name of it
 
   return (
     <div className="onboarding-section-body">

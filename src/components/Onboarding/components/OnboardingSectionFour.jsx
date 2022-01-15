@@ -3,7 +3,7 @@ import { Heading, Text } from "../../../shared";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-const OnboardingSectionFour = () => {
+const OnboardingSectionFour = ({ formData }) => {
   return (
     <div className="onboarding-section-body">
       <svg
@@ -20,7 +20,7 @@ const OnboardingSectionFour = () => {
         />
       </svg>
       <div className="text-center">
-        <Heading level="1">Congratulations, Eren!</Heading>
+        <Heading level="1">{`Congratulations, ${formData["First Name"]}!`}</Heading>
         <Text type="body">
           You have completed onboarding, you can start using the Eden!
         </Text>
