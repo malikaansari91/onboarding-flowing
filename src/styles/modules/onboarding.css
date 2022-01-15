@@ -2,6 +2,16 @@
   margin: 60px 0;
 }
 
+.onboarding-container .logo {
+  width: 40px;
+  height: 40px;
+}
+
+.onboarding-container .card-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+
 .onboarding-container .onboarding-section-body h1,
 p {
   margin-bottom: 0;

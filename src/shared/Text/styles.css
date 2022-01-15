@@ -1,6 +1,9 @@
 .text__body {
   font-size: 14px;
 }
+.text__caption {
+  font-size: 12px;
+}
 .text__underline {
   text-decoration: underline;
 }

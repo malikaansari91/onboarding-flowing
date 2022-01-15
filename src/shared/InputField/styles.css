@@ -33,3 +33,6 @@
 .error input {
   border-color: red;
 }
+.error input:focus-visible {
+  outline-color: red;
+}

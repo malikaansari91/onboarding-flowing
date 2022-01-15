@@ -5,7 +5,8 @@
 }
 
 select,
-input {
+input,
+button {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -16,7 +17,8 @@ input {
   font-size: 14px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
   background-color: var(--color-primary);
   color: var(--color-text-white);
 }

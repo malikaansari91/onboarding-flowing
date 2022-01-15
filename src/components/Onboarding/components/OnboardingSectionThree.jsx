@@ -1,15 +1,32 @@
-import React from "react";
-import { Heading, Input, Text } from "../../../shared";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { Heading, Card, Text } from "../../../shared";
+
+const CardData = [
+  {
+    id: 1,
+    icon: <div className="icon"></div>,
+    name: "For myself",
+    description: "Write better. Think more clearly. Stay organized.",
+  },
+  {
+    id: 2,
+    icon: <div className="icon"></div>,
+    name: "With my team",
+    description: "Wikis, docs, tasks & projects,all in one place.",
+  },
+];
 
 const OnboardingSectionThree = ({ goToNext }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = () => {
-    goToNext();
+  const [cardId, seCard] = useState(1);
+
+  const CardSection = ({ name, description, icon }) => {
+    return (
+      <>
+        {icon}
+        <Heading level="5">{name}</Heading>
+        <Text type="caption">{description}</Text>
+      </>
+    );
   };
 
   return (
@@ -21,29 +38,26 @@ const OnboardingSectionThree = ({ goToNext }) => {
         </Text>
       </div>
 
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          label="Workplace Name"
-          register={register}
-          required
-          error={errors["Workplace Name"]}
-          inputProps={{
-            placeholder: "Eden",
-          }}
-        />
+      <div className="form">
+        <div className="card-container">
+          {CardData.map((item, index) => {
+            return (
+              <Card
+                onClick={() => seCard(item.id)}
+                selected={item.id === cardId}
+                key={index}
+                className={`${index < CardData.length - 1 ? "mr-20" : ""}`}
+              >
+                {CardSection(item)}
+              </Card>
+            );
+          })}
+        </div>
 
-        <Input
-          label="Workplace URL"
-          leftComponent={"www.eden.com/"}
-          register={register}
-          error={errors["Workplace URL"]}
-          inputProps={{
-            placeholder: "Example",
-          }}
-        />
-
-        <input type="submit" value="Create Workplace" />
-      </form>
+        <button onClick={goToNext} className="mt-30 cursor-pointer">
+          Create Workplace
+        </button>
+      </div>
     </div>
   );
 };
