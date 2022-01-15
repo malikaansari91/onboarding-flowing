@@ -7,10 +7,12 @@ export const StepperSteps = function ({ children }) {
   useEffect(() => {
     const stepperSteps = React.Children.toArray(children)
       .filter((step) => {
+        console.log(step.type.name);
         return step.type.name === "StepperStep";
       })
       .map((step) => step.props);
     setSteps(stepperSteps);
+    console.log("stepperSteps", stepperSteps);
   }, [setSteps]);
 
   return (
