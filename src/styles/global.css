@@ -58,7 +58,14 @@ a:active {
 }
 
 @media only screen and (max-width: 768px) {
-  .md-p-20 {
-    padding: 20px;
+  body {
+    font-size: 10pt;
+  }
+  .md-pl-20 {
+    padding-left: 20px;
+  }
+
+  .md-pr-20 {
+    padding-left: 20px;
   }
 }
