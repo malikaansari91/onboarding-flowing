@@ -5,14 +5,10 @@ export const StepperSteps = function ({ children }) {
   const { currentStep, steps, setSteps } = useStepper();
 
   useEffect(() => {
-    const stepperSteps = React.Children.toArray(children)
-      .filter((step) => {
-        console.log(step.type.name);
-        return step.type.name === "StepperStep";
-      })
-      .map((step) => step.props);
+    const stepperSteps = React.Children.toArray(children).map(
+      (step) => step.props
+    );
     setSteps(stepperSteps);
-    console.log("stepperSteps", stepperSteps);
   }, [setSteps]);
 
   return (
