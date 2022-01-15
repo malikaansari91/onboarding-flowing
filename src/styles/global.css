@@ -56,3 +56,9 @@ a:active {
 .mr-10 {
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  .md-p-20 {
+    padding: 20px;
+  }
+}

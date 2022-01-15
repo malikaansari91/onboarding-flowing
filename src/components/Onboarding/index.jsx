@@ -19,7 +19,7 @@ function Onboarding() {
   console.log(formData);
   return (
     <div className="onboarding-container mt-60">
-      <div className="container">
+      <div className="container md-p-20">
         <div className="d-flex flex-justify-center flex-items-center onboarding-header mb-60">
           <svg
             className="icon color-primary mr-10  d-block"
