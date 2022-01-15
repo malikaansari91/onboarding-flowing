@@ -1,0 +1,28 @@
+.text__body {
+  font-size: 14px;
+}
+.text__underline {
+  text-decoration: underline;
+}
+
+.text__italic {
+  font-style: italic;
+}
+
+.text__truncated {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text__primary {
+  color: var(--text-color-primary);
+}
+
+.text__danger {
+  color: var(--text-color-danger);
+}
+
+.text__secondary {
+  color: var(--color-text-secondary);
+}
